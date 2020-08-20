@@ -1,0 +1,59 @@
+@import "~styles/config";
+
+.mobile__nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  height: $height-nav;
+  background-color: $background-color;
+  @media (min-width: $tablet) {
+    display: none;
+  }
+  & .inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    height: 100%;
+  }
+  //item
+  & .item {
+    @include inline-flex;
+    & .icon svg {
+      @include icon($icon-size: $icon-size-nav, $icon-color: $horizontalRule);
+    }
+    &.active {
+      & .icon svg {
+        @include icon($icon-size: $icon-size-nav, $icon-color: $primary);
+      }
+    }
+  }
+}
+
+//button
+.nav__button__container {
+  position: fixed;
+  right: $container-gutter;
+  bottom: $container-gutter;
+  @media (max-width: $tablet) {
+    bottom: calc(#{$height-nav} + #{$gutter});
+  }
+}
+
+.nav__button {
+  overflow: hidden;
+  border-radius: $circle;
+  box-shadow: $shadow;
+  background-color: $white;
+  padding: 1rem;
+  margin: 0 1rem;
+  @include inline-flex;
+  & svg {
+    @include icon($icon-size: $icon-size-button);
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

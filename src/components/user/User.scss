@@ -1,0 +1,14 @@
+@import "~styles/config";
+
+.user__icon {
+  width: $icon-size-user;
+  height: $icon-size-user;
+  overflow: hidden;
+  border-radius: $circle;
+  border: $border;
+  cursor: pointer;
+  transition: $fade;
+  &:hover {
+    border-color: $primary;
+  }
+}

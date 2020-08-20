@@ -1,0 +1,48 @@
+@import '~styles/config';
+
+.column {
+  @include grid-col;
+}
+
+.column2 {
+  @include grid-col;
+  @media (min-width: $phablet) {
+    @include grid-col(1fr 1fr);
+  }
+
+  &.align {
+    align-items: center;
+  }
+}
+
+.reverse {
+  & .column2 {
+    & div {
+      @media (max-width: $phablet) {
+        grid-row: 1;
+
+      }
+    }
+  }
+}
+
+.column3 {
+  @include grid-col;
+  @media (min-width: $min-960) {
+    @include grid-col(1fr 1fr 1fr);
+  }
+}
+
+.column__fix .column__3 {
+  @include grid-col(1fr 1fr 1fr);
+}
+
+.colum4 {
+  @include grid-col;
+  @media (min-width: $tablet) {
+    @include grid-col(1fr 1fr 1fr 1fr);
+  }
+  @media (max-width: $tablet) {
+    @include grid-col(1fr 1fr);
+  }
+}

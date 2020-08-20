@@ -1,0 +1,312 @@
+@mixin fit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+@mixin responsive-font(
+  $min-size: $font-size-min,
+  $size: $font-size,
+  $limit: $page-limit
+) {
+  $scale-font-enable: global-variable-exists(scale);
+  $unitless-min: strip-unit($min-size);
+  $unitless-size: strip-unit($size);
+  $baseline: strip-unit($phone);
+  $font-multiplier: (
+    ($unitless-size - $unitless-min) / (strip-unit($limit) - $baseline)
+  );
+  $font-baseline: ($unitless-min - $font-multiplier * $baseline);
+  @if $unitless-min >= $unitless-size {
+    @warn 'Responsive font: min-size equal or greater than size';
+  }
+  font-size: #{$unitless-min}px;
+  @if $scale-font-enable == true {
+    // stylelint-disable-next-line
+    font-size: calc(#{$unitless-min}px * #{var(--scale-font)});
+  }
+  @media (min-width: $phone) {
+    font-size: #{$unitless-min}px;
+    @if $scale-font-enable == true {
+      // stylelint-disable-next-line
+      font-size: calc(
+        (#{$font-multiplier} * #{100vw} + (#{$font-baseline}px)) *
+          #{var(--scale-font)}
+      );
+    } @else {
+      // stylelint-disable-next-line
+      font-size: calc((#{$font-multiplier} * #{100vw} + (#{$font-baseline}px)));
+    }
+  }
+  @media (min-width: $limit) {
+    font-size: #{$unitless-size}px;
+    @if $scale-font-enable == true {
+      // stylelint-disable-next-line
+      font-size: calc(#{$unitless-size}px * #{var(--scale-font)});
+    }
+  }
+}
+// Alias for responsive-font mixin
+@mixin rf($args...) {
+  @include responsive-font($args...);
+}
+@mixin vertically-responsive($property, $number) {
+  #{$property}: $number;
+  @if global-variable-exists(scale) {
+    @supports (--css: variables) {
+      #{$property}: calc(#{$number} * var(--scale-element));
+    }
+  }
+}
+@mixin container() {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  /*PHABLET*/
+  @media (max-width: $phablet) {
+    padding: 0 2rem;
+  }
+}
+@mixin js-only {
+  html:not(:global(.no-js)) & {
+    @content;
+  }
+}
+@mixin no-js {
+  html:not(:global(.js)) & {
+    @content;
+  }
+}
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+    only screen and (-o-min-device-pixel-ratio: 13/10),
+    only screen and (min-resolution: 120dpi) {
+    @content;
+  }
+}
+// Gsap trans-in defaults
+@mixin will-animate($transform: true, $opacity: true) {
+  @include js-only {
+    @if $opacity == true {
+      opacity: 0;
+    }
+    @if $transform == true {
+      will-change: opacity, transform;
+    } @else {
+      will-change: opacity;
+    }
+  }
+}
+
+//button
+@mixin button(
+  $background-color: $primary,
+  $color: $white,
+  $border-color: $primary
+) {
+  display: inline-flex;
+  position: relative;
+  padding: 0 $gutter;
+  margin: auto;
+  height: $gutter * 2;
+  cursor: pointer;
+  font-size: $font-size;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  line-height: $gutter * 2;
+  vertical-align: middle;
+  background-color: $background-color;
+  color: $color;
+  transition: $fade;
+  border-radius: $rounded;
+  border: 1px solid $border-color;
+  font-feature-settings: "palt";
+
+  &:hover {
+    background-color: lighten($background-color, 20%);
+  }
+}
+
+//gutter
+@mixin gutter {
+  padding: 0 $container-gutter;
+}
+
+@mixin nav-gutter {
+  padding: 3rem $container-gutter;
+}
+
+//Container
+@mixin container() {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  @include gutter;
+}
+
+@mixin js-only {
+  html:not(:global(.no-js)) & {
+    @content;
+  }
+}
+@mixin no-js {
+  html:not(:global(.js)) & {
+    @content;
+  }
+}
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+    only screen and (-o-min-device-pixel-ratio: 13/10),
+    only screen and (min-resolution: 120dpi) {
+    @content;
+  }
+}
+// Gsap trans-in defaults
+@mixin will-animate($transform: true, $opacity: true) {
+  @include js-only {
+    @if $opacity == true {
+      opacity: 0;
+    }
+    @if $transform == true {
+      will-change: opacity, transform;
+    } @else {
+      will-change: opacity;
+    }
+  }
+}
+
+//Block Margin
+
+//Flex
+@mixin flex($align-items: center, $justify-content: center) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+@mixin inline-flex($align-items: center, $justify-content: center) {
+  display: inline-flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+//icons
+@mixin icon($icon-size: $icon-size, $icon-color: $black) {
+  width: $icon-size;
+  height: $icon-size;
+
+  & * {
+    fill: $icon-color;
+  }
+}
+@mixin icon-position {
+  position: relative;
+  top: -0.05em;
+}
+
+@mixin icon-white($icon-size: $icon-size, $icon-color: $black) {
+  width: auto;
+  height: $icon-size;
+
+  & * {
+    fill: $white;
+  }
+}
+//Animations
+@mixin scroll {
+  transition: $scroll;
+  will-change: transform, opacity;
+}
+@mixin invite-scroll {
+  animation: scroll 3s cubic-bezier(0.5, 0.23, 0.38, 0.99) 0s infinite;
+  will-change: transform;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  66% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(40%);
+  }
+}
+@mixin hover-line {
+  position: relative;
+
+  &:hover:before {
+    transform: scaleX(1);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0.04em;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transition: transform $line;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    border-radius: $circle;
+  }
+}
+@mixin line-hover {
+  position: relative;
+
+  &:hover:before {
+    transform: scaleX(0);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0.04em;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transition: transform $line;
+    transform-origin: 0 50%;
+    transform: scaleX(1);
+    border-radius: $circle;
+  }
+}
+
+@mixin line {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0.04em;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transition: transform $line;
+    transform-origin: 0 50%;
+    transform: scaleX(1);
+    border-radius: $circle;
+  }
+}
+
+//Card
+@mixin card {
+  overflow: hidden;
+  border-radius: $rounded;
+  border: $border;
+}

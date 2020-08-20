@@ -1,0 +1,91 @@
+@import "~styles/config";
+
+//form
+.card__form {
+  @include card;
+  text-align: center;
+  max-width: $phablet;
+  margin: auto;
+
+  & .title__container {
+    border-bottom: $border;
+    padding-bottom: $gutter;
+  }
+  & .title {
+    font-size: $font-size-l;
+    padding: $gutter $gutter 0;
+    color: $primary;
+    margin: 0;
+  }
+  & .text {
+    padding: $gutter $gutter 0;
+    color: $grey;
+  }
+
+  & .container {
+    display: grid;
+    grid-row-gap: $gutter;
+    padding: $gutter * 2 $gutter;
+  }
+}
+
+//section item
+.section__item {
+  padding: $gutter 0;
+  @include flex;
+  font-weight: 400;
+
+  &:before {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background-color: $horizontalRule;
+    margin-right: $gutter;
+  }
+
+  &:after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background-color: $horizontalRule;
+    margin-left: $gutter;
+  }
+}
+
+//note item
+.note__item {
+  margin: 0;
+  font-size: $font-size-s;
+  color: $grey;
+  text-align: left;
+
+  & a {
+    color: $title;
+    text-decoration: underline;
+
+    &:hover {
+    }
+  }
+}
+
+//link item
+.link__item {
+  @include flex;
+  margin-top: $gutter;
+
+  & .link__item__title {
+    font-size: $font-size-s;
+    margin: 0;
+    padding-right: $gutter;
+  }
+
+  & .link__item__text {
+    color: $black;
+    font-weight: 600;
+    font-size: $font-size-s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+$gutter: 2rem;
+$container-gutter-mobile: $gutter;
+$container-gutter-tablet: 50px;
+$container-gutter-desktop: 70px;
+$container-gutter: calc(20px + (80 - 20) * ((100vw - 375px) / (1500 - 375)));
+
+//block
+$block-margin: calc(85px + (250 - 85) * ((100vw - 375px) / (1500 - 375)));
+$block-single-margin: calc(
+  42.5px + (125 - 42.5) * ((100vw - 375px) / (1500 - 375))
+);
+
+// grid
+$grid-column-count: 12;
+$grid-baseline: 16px;
+
+// page dimensions
+$page-width: 1290px;
+$page-limit: $page-width + ($container-gutter-desktop * 2);
+
+// Fonts
+$serif: "Ryo Display PlusN", serif;
+$sans: "FF Tisa Sans", "Ryo Gothic", sans-serif;
+
+$font-size-l: calc(24px + (28 - 24) * ((100vw - 375px) / (1500 - 375)));
+$font-size: calc(16px + (18 - 16) * ((100vw - 375px) / (1500 - 375)));
+$font-size-min: 1.3rem;
+$font-size-s: 1.2rem;
+$line-height: 1.8;
+
+// Colors
+$color-font: #333;
+$color-background: #fff;
+$color-placeholder: #ddd;
+
+// Timings
+$transition-enter: 200ms;
+$transition-leave: 500ms;
+
+// Custom break point (Min)
+$min-1800: 1800px;
+$min-1440: 1440px;
+$min-1280: 1280px;
+$min-1200: 1200px;
+$min-1080: 1080px;
+$min-1024: 1024px;
+$min-960: 960px;
+$min-840: 840px;
+$min-768: 768px;
+$min-720: 720px;
+$min-640: 640px;
+$min-600: 600px;
+$min-560: 560px;
+$min-540: 540px;
+$min-480: 480px;
+$min-420: 420px;
+$min-375: 375px;
+$min-360: 360px;
+
+// Custom break points (Max)
+$max-1280: 1279px;
+$max-1200: 1199px;
+$max-1080: 1079px;
+$max-1024: 1023px;
+$max-960: 959px;
+$max-840: 839px;
+$max-768: 767px;
+$max-720: 719px;
+$max-640: 639px;
+$max-600: 599px;
+$max-540: 539px;
+$max-480: 479px;
+$max-420: 419px;
+$max-375: 374px;
+$max-360: 359px;
+
+// Predefined breakpoints
+$phone: $min-420;
+$phablet: $min-540;
+$tablet: $min-720;
+$desktop: $min-1080;
+$desktop_medium: $min-1280;
+$desktop_large: $min-1440;
+
+// Segment
+$segment-padding-mobile: $gutter * 3;
+$segment-padding: 200px;
+
+//percentage-based segments spacing
+// Vertical scaling values.
+// remove this map to disable vertical scaling
+// value 1 = height breakpoint, value 2 = multiplier
+$scale: ((920px, 0.975), (800px, 0.95), (690px, 0.925));
+
+$logo-size: calc(20px + (25 - 20) * ((100vw - 375px) / (1500 - 375)));
+
+//Icons
+$icon-size-max: 5rem;
+$icon-size: 1.6rem;
+$icon-size-min: 1.3rem;
+$icon-size-button: calc(18px + (25 - 18) * ((100vw - 375px) / (1500 - 375)));
+
+$icon-size-user: calc(30px + (40 - 30) * ((100vw - 375px) / (1500 - 375)));
+$icon-size-nav: 2rem;
+
+//Colors
+$primary: #ff0061;
+$background-color: #fff;
+
+$black: #121212;
+$white: #fcfcfc;
+
+$horizontalRule: rgba(8, 8, 11, 0.15);
+$dark-horizontalRule: rgba(252, 252, 252, 0.15);
+
+$inputBackground: rgba(0, 0, 0, 0.05);
+$primary-grey: rgba(16, 20, 26, 0.05);
+
+//Colors Typography
+$title: #121212;
+$paragraph: #1c2025;
+$grey: rgba(18, 18, 18, 0.5);
+$placeholder: #ddd;
+
+$dark-title: #fcfcfc;
+$dark-paragraph: #efefef;
+$dark-grey: rgba(252, 252, 252, 0.3);
+$dark-placeholder: #6f6f6f;
+
+//Animations
+$fade: all 0.3s;
+$fade-up: all 0.1s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+$line: 0.6s cubic-bezier(1, 0, 0, 1);
+$scroll: all 0.9s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+$show: max-height 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+
+//objects
+$circle: 20rem;
+$rounded: 0.6rem;
+$shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+//Border
+$border: 1px solid $horizontalRule;
+
+//height
+$height-nav: 5rem;

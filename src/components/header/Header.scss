@@ -1,0 +1,45 @@
+@import "~styles/config";
+
+#header {
+  position: relative;
+  z-index: 9000;
+  @include container;
+  width: 100%;
+  z-index: 9900;
+  margin: 3rem auto;
+  will-change: transform;
+  transition: var(--scroll);
+  @include inline-flex($justify-content: space-between);
+  @media (max-width: $tablet) {
+    justify-content: center;
+  }
+  //Container
+  & .header__container {
+    display: inline-flex;
+  }
+
+  //Logo
+  & .header__logo {
+    @include inline-flex;
+
+    svg {
+      height: $logo-size;
+      width: auto;
+    }
+  }
+
+  a.logo__link.desktop-content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-imypetems: center;
+    padding-left: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

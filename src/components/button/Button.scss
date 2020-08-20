@@ -1,0 +1,27 @@
+@import "~styles/config";
+
+.button {
+  @include button;
+}
+
+.social__button {
+  @include button(
+    $color: $black,
+    $background-color: $white,
+    $border-color: $black
+  );
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  &:hover {
+    background-color: lighten($black, 80%);
+  }
+  & .icon {
+    @include inline-flex;
+    height: 100%;
+    & svg {
+      width: auto;
+      height: $icon-size;
+    }
+  }
+}
