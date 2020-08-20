@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: 3rem 1fr;
   &:hover {
-    background-color: lighten($black, 80%);
+    background-color: lighten($grey, 70%);
   }
   & .icon {
     @include inline-flex;
