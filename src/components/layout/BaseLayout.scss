@@ -1,7 +1,7 @@
-@import '~styles/config';
+@import "~styles/config";
 
 :global {
-  @import '~styles/base';
+  @import "~styles/base";
 }
 
 .layout {
@@ -16,17 +16,17 @@
     height: 1.8rem;
   }
 }
-.copylight{
-    margin: 0 auto;
-    padding: 0 5rem;
-    position: fixed;
-    bottom: 3rem;
-    left: 0;
-    width: 100%;
-    z-index: 9900;
-    text-align: center;
-    & h6{
-      font-size: $font-size-min;
-      color: $grey;
-    }
+.copylight {
+  margin: 0 auto;
+  padding: 0 5rem;
+  position: fixed;
+  bottom: 3rem;
+  left: 0;
+  width: 100%;
+  z-index: 9900;
+  text-align: center;
+  & h6 {
+    font-size: $font-size-s;
+    color: $grey;
+  }
 }

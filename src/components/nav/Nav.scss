@@ -44,16 +44,20 @@
 .nav__button {
   overflow: hidden;
   border-radius: $circle;
-  box-shadow: $shadow;
-  background-color: $white;
-  padding: 1rem;
+  box-shadow: $shadow-primary;
+  background-color: $primary;
+  padding: $gutter;
   margin: 0 1rem;
   @include inline-flex;
+  transition: $fade;
   & svg {
-    @include icon($icon-size: $icon-size-button);
+    @include icon($icon-size: $icon-size-button, $icon-color: $white);
   }
 
   &:last-of-type {
     margin-right: 0;
+  }
+  &:hover {
+    box-shadow: $shadow-primary-hover;
   }
 }

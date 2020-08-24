@@ -1,18 +1,17 @@
 @import "~styles/config";
 
 #header {
-  position: relative;
-  z-index: 9000;
-  @include container;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 9900;
-  margin: 3rem auto;
+  padding: 3rem $container-gutter;
+  background: $background-color;
   will-change: transform;
   transition: var(--scroll);
+  box-shadow: $shadow;
   @include inline-flex($justify-content: space-between);
-  @media (max-width: $tablet) {
-    justify-content: center;
-  }
+
   //Container
   & .header__container {
     display: inline-flex;
@@ -30,12 +29,6 @@
 
   a.logo__link.desktop-content {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-imypetems: center;
     padding-left: 0;
 
     &:hover {

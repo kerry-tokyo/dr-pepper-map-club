@@ -1,0 +1,15 @@
+@import "~styles/config";
+
+.map {
+  width: 100%;
+  height: 500px;
+  background: $horizontalRule;
+}
+
+.marker {
+  height: 5rem;
+  cursor: pointer;
+  max-width: initial;
+  &:hover {
+  }
+}

@@ -1,0 +1,48 @@
+@import "~styles/config";
+
+.dropdown {
+  position: relative;
+  .dropdown__inner {
+    position: absolute;
+    right: 0;
+    min-width: 20rem;
+    @include card;
+    transition: $dropdown;
+    transform-origin: 100% 0%;
+    margin-top: $gutter;
+    padding: 1rem 0;
+    transform: scale(1);
+    opacity: 1;
+    background: $background-color;
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+      width: 0;
+      margin: 0;
+      height: 0;
+      transform: scale(0);
+    }
+    //item
+    & .dropdown__item {
+      font-size: $font-size-s;
+      padding: 1rem 1.5rem;
+      color: $grey;
+      width: 100%;
+      text-align: left;
+      @include inline-flex($justify-content: space-between);
+      transition: $fade;
+      &:hover {
+        color: $primary;
+        & .icon svg * {
+          fill: $primary;
+        }
+      }
+      //icon
+      & .icon {
+        & svg {
+          @include icon($icon-color: $grey);
+        }
+      }
+    }
+  }
+}
