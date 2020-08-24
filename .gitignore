@@ -70,3 +70,4 @@ yarn-error.log
 
 # Firebase
 .env
+src/firebase/inde.ts
