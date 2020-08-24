@@ -10,6 +10,9 @@ $block-single-margin: calc(
   42.5px + (125 - 42.5) * ((100vw - 375px) / (1500 - 375))
 );
 
+//hero
+$hero-padding: calc(12rem + (200 - 120) * ((100vw - 375px) / (1500 - 375)));
+
 // grid
 $grid-column-count: 12;
 $grid-baseline: 16px;

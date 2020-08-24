@@ -8,7 +8,7 @@ interface DropdownItemProps {
   children: ReactNode;
   href?: string;
   onClick?(): void;
-  icon?: boolean;
+  icon?: ReactNode;
 }
 
 export const DropdownItem = ({

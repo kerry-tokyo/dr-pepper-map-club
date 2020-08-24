@@ -1,6 +1,8 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
+import { auth, firebase } from "../../firebase";
+
 import Logo from "../../assets/svg/logo.svg";
 
 import { helmet } from "../../utils/helmet";
@@ -27,11 +29,15 @@ interface BaseLayoutProps {
 export default ({ children }: BaseLayoutProps) => {
   const [user, setUser] = useState<User | null>(null);
 
-  //  useEffect(() => {
-  //  return firebase.auth().onAuthStateChanged((user) => {
-  //  setUser(user);
-  //});
-  // }, []);
+  useEffect(() => {
+    return firebase.auth().onAuthStateChanged((user) => {
+      setUser(user);
+    });
+  }, []);
+
+  const handleLogout = () => {
+    firebase.auth().signOut();
+  };
 
   return (
     <div className={s.layout}>
@@ -40,14 +46,14 @@ export default ({ children }: BaseLayoutProps) => {
       <Header logo={<Logo />}>
         {user ? (
           <>
-            <Dropdown button={<Icon icon={UserIcon} />}>
+            <Dropdown button={<Icon icon={user && user.photoURL} />}>
               <DropdownItem href="/mypage" icon={<User />}>
                 My Page
               </DropdownItem>
               <DropdownItem href="/mypage" icon={<Settings />}>
                 Settings
               </DropdownItem>
-              <DropdownItem>Sign Out</DropdownItem>
+              <DropdownItem onClick={handleLogout}>Sign Out</DropdownItem>
             </Dropdown>
           </>
         ) : (
@@ -66,12 +72,7 @@ export default ({ children }: BaseLayoutProps) => {
           ]}
         />
       ) : (
-        <MobileNav
-          nav={[
-            { icon: <Location />, to: "/" },
-            { icon: <User />, to: "/signin" },
-          ]}
-        />
+        <MobileNav nav={[{ icon: <Location />, to: "/" }]} />
       )}
       {children}
     </div>
