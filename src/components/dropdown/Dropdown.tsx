@@ -9,8 +9,6 @@ interface DropdownProps {
 
 export const Dropdown = ({ button, children }: DropdownProps) => {
   const [isOpen, setContentState] = useState(false);
-  const popupRef = useRef();
-  const documentClickHandler = useRef();
 
   return (
     <div className={s.dropdown}>
@@ -20,12 +18,13 @@ export const Dropdown = ({ button, children }: DropdownProps) => {
       >
         {button}
       </div>
-      <div
-        className={s(s.dropdown__inner, isOpen ? "" : s.hide)}
-        ref={popupRef}
-      >
+      <div className={s(s.dropdown__inner, isOpen ? "" : s.hide)}>
         {children}
       </div>
+      <div
+        className={s(s.dropdown__bg, isOpen ? "" : s.hide)}
+        onClick={() => setContentState(!isOpen)}
+      ></div>
     </div>
   );
 };

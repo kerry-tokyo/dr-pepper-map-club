@@ -21,6 +21,7 @@
     transform: scale(1);
     opacity: 1;
     background: $background-color;
+    z-index: 9000;
     &.hide {
       opacity: 0;
       visibility: hidden;
@@ -56,6 +57,23 @@
       margin-bottom: 1rem;
       border-bottom: $border;
       width: 100%;
+    }
+  }
+  //bg
+  & .dropdown__bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 8000;
+    transform: translate(0, -6rem);
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    cursor: auto;
+    background-color: transparent;
+    &.hide {
+      display: none;
     }
   }
 }
