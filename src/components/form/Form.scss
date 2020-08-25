@@ -1,0 +1,17 @@
+@import "~styles/config";
+
+//item
+.form__item {
+  margin-bottom: $gutter * 2;
+}
+
+//label
+.label {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+//textarea
+.textarea {
+  @include input($height: $gutter * 6);
+}

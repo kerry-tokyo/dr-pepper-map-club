@@ -30,3 +30,24 @@
     color: $grey;
   }
 }
+
+//text
+.text__layout {
+  max-width: $max-1024;
+  & h1 {
+    color: $primary;
+  }
+  & p {
+    margin-bottom: 1.3em;
+  }
+  & a {
+    color: $primary;
+    @include line-hover;
+    white-space: nowrap;
+  }
+  & blockquote {
+    background-color: $white;
+    @include card;
+    padding: $gutter;
+  }
+}

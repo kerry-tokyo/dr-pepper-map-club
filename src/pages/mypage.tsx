@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
+import { firebase } from "../firebase";
+
 import BaseLayout from "components/layout/BaseLayout";
 import { Hero } from "components/hero/Hero";
-import { CardForm } from "components/form/CardForm";
-import { SocialButton } from "components/button/SocialButton";
 
-class MyPage extends React.Component {
-  render() {
-    return (
-      <BaseLayout>
-        <Helmet title="My Page" />
-        <Hero>
-          <CardForm
-            title="Sign In"
-            text="Please log in from any service. Please note that Dr Pepper Map Club currently accepts logins only from Google and GitHub accounts."
-          ></CardForm>
-        </Hero>
-      </BaseLayout>
-    );
-  }
-}
+export default () => {
+  const [user, setUser] = useState<User | null>(null);
 
-export default MyPage;
+  useEffect(() => {
+    return firebase.auth().onAuthStateChanged((user) => {
+      setUser(user);
+    });
+  }, []);
+
+  return (
+    <BaseLayout>
+      <Helmet title="My Page" />
+      <Hero user icon={user && user.photoURL} name={user && user.displayName} />
+    </BaseLayout>
+  );
+};

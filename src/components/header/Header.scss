@@ -5,11 +5,11 @@
   top: 0;
   width: 100%;
   z-index: 9900;
-  padding: 3rem $container-gutter;
+  padding: 2rem $container-gutter;
   background: $background-color;
   will-change: transform;
   transition: var(--scroll);
-  box-shadow: $shadow;
+  border-bottom: $border;
   @include inline-flex($justify-content: space-between);
 
   //Container
@@ -34,5 +34,9 @@
     &:hover {
       text-decoration: none;
     }
+  }
+  //navigation
+  & .header__navigation {
+    @include inline-flex;
   }
 }

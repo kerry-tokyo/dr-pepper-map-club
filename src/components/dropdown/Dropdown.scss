@@ -2,6 +2,13 @@
 
 .dropdown {
   position: relative;
+
+  //button
+  .dropdown__button {
+    & svg {
+      @include icon;
+    }
+  }
   .dropdown__inner {
     position: absolute;
     right: 0;
@@ -9,7 +16,7 @@
     @include card;
     transition: $dropdown;
     transform-origin: 100% 0%;
-    margin-top: $gutter;
+    margin-top: 1rem;
     padding: 1rem 0;
     transform: scale(1);
     opacity: 1;
@@ -42,6 +49,13 @@
           @include icon($icon-color: $grey);
         }
       }
+    }
+    //hr
+    & hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: $border;
+      width: 100%;
     }
   }
 }

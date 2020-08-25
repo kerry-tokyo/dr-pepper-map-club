@@ -29,6 +29,30 @@ class SignIn extends React.Component {
         });
       })
       .then(() => {
+        location.href = "/index";
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  //GitHub
+  signInWithGithub = () => {
+    const provider = new firebase.auth.GithubAuthProvider();
+    firebase
+      .auth()
+      .signInWithRedirect(provider)
+
+      .then((res) => {
+        return firestore.collection("users").doc(res.user.uid).set({
+          created_at: firebase.firestore.FieldValue.serverTimestamp(),
+          name: res.user.displayName,
+          thumgnailMediumImageUrl: res.user.photoURL,
+          originalImageUrl: res.user.photoURL,
+          update_at: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+      })
+      .then(() => {
         location.href = "/";
       })
       .catch((error) => {
@@ -48,7 +72,9 @@ class SignIn extends React.Component {
             <SocialButton icon={<Google />} onClick={this.signInWithGoogle}>
               Sign in with Google
             </SocialButton>
-            <SocialButton icon={<GitHub />}>Sign in with GitHub</SocialButton>
+            <SocialButton icon={<GitHub />} onClick={this.signInWithGithub}>
+              Sign in with GitHub
+            </SocialButton>
           </CardForm>
         </Hero>
       </BaseLayout>

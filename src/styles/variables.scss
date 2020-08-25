@@ -22,8 +22,8 @@ $page-width: 1290px;
 $page-limit: $page-width + ($container-gutter-desktop * 2);
 
 // Fonts
-$serif: "Ryo Display PlusN", serif;
-$sans: "FF Tisa Sans", "Ryo Gothic", sans-serif;
+$serif: serif;
+$sans: "FF Tisa Sans", sans-serif;
 
 $font-size-l: calc(24px + (28 - 24) * ((100vw - 375px) / (1500 - 375)));
 $font-size: calc(16px + (18 - 16) * ((100vw - 375px) / (1500 - 375)));
@@ -34,7 +34,6 @@ $line-height: 1.8;
 // Colors
 $color-font: #333;
 $color-background: #fff;
-$color-placeholder: #ddd;
 
 // Timings
 $transition-enter: 200ms;
@@ -101,7 +100,7 @@ $logo-size: calc(20px + (25 - 20) * ((100vw - 375px) / (1500 - 375)));
 $icon-size-max: 5rem;
 $icon-size: 1.6rem;
 $icon-size-min: 1.3rem;
-$icon-size-button: calc(20px + (25 - 20) * ((100vw - 375px) / (1500 - 375)));
+$icon-size-button: calc(20px + (22 - 20) * ((100vw - 375px) / (1500 - 375)));
 
 $icon-size-user: calc(30px + (40 - 30) * ((100vw - 375px) / (1500 - 375)));
 $icon-size-nav: 2rem;
@@ -121,7 +120,7 @@ $primary-grey: rgba(16, 20, 26, 0.05);
 
 //Colors Typography
 $title: #000044;
-$paragraph: #1c2025;
+$paragraph: #7a7a88;
 $grey: rgba(18, 18, 18, 0.5);
 $placeholder: #ddd;
 
@@ -136,13 +135,13 @@ $fade-up: all 0.1s cubic-bezier(0.63, 0.03, 0.17, 0.95);
 $line: 0.6s cubic-bezier(1, 0, 0, 1);
 $scroll: all 0.9s cubic-bezier(0.63, 0.03, 0.17, 0.95);
 $show: max-height 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
-$dropdown: transform 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95),
-  opacity 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+$dropdown: all 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
 
 //objects
 $circle: 20rem;
 $rounded: 0.6rem;
 $shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+$shadow-hover: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 $shadow-primary: 0px 0px 20px 0px rgba(255, 0, 97, 0.4);
 $shadow-primary-hover: 0px 0px 20px 0px rgba(255, 0, 97, 0.6);
 

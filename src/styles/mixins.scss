@@ -310,3 +310,18 @@
   border-radius: $rounded;
   border: $border;
 }
+
+//input
+@mixin input($padding: $gutter, $height: $gutter * 2) {
+  width: 100%;
+  height: $height;
+  border-bottom: $border;
+  transition: $fade;
+  padding: $padding 0;
+  font-size: $font-size;
+  font-weight: 400;
+
+  &:focus {
+    border-color: $primary;
+  }
+}

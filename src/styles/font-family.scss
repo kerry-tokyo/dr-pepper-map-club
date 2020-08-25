@@ -1,37 +1,17 @@
-//Japanese - Sans
 @font-face {
-  font-family: 'Ryo Gothic';
-  src: url('fonts/ryo-gothic-light.otf') format('opentype');
+  font-family: "FF Tisa Sans";
+  src: url("fonts/ff-tisa-sans-light.otf") format("opentype");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Ryo Gothic';
-  src: url('fonts/ryo-gothic-regular.otf') format('opentype');
+  font-family: "FF Tisa Sans";
+  src: url("fonts/ff-tisa-sans-regular.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Ryo Gothic';
-  src: url('fonts/ryo-gothic-medium.otf') format('opentype');
-  font-weight: 500;
-}
-
-//English
-@font-face {
-  font-family: 'FF Tisa Sans';
-  src: url('fonts/ff-tisa-sans-light.otf') format('opentype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'FF Tisa Sans';
-  src: url('fonts/ff-tisa-sans-regular.otf') format('opentype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'FF Tisa Sans';
-  src: url('fonts/ff-tisa-sans-medium.otf') format('opentype');
+  font-family: "FF Tisa Sans";
+  src: url("fonts/ff-tisa-sans-medium.otf") format("opentype");
   font-weight: 500;
 }

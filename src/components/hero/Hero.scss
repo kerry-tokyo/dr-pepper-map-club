@@ -2,4 +2,24 @@
 
 .hero {
   padding-top: $hero-padding;
+  & p {
+    max-width: $max-600;
+  }
+}
+
+//user
+.hero__user {
+  text-align: center;
+  & .icon {
+    width: calc(100px + (200 - 100) * ((100vw - 375px) / (1500 - 375)));
+    height: calc(100px + (200 - 100) * ((100vw - 375px) / (1500 - 375)));
+    overflow: hidden;
+    border-radius: $circle;
+    border: $border;
+    margin: auto;
+  }
+  & .name {
+    font-size: $font-size-l;
+    margin: 1rem 0 $gutter * 2;
+  }
 }

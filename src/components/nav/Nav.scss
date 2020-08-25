@@ -8,6 +8,7 @@
   width: 100%;
   z-index: 9999;
   height: $height-nav;
+  box-shadow: $shadow;
   background-color: $background-color;
   @media (min-width: $tablet) {
     display: none;
@@ -44,20 +45,38 @@
 .nav__button {
   overflow: hidden;
   border-radius: $circle;
-  box-shadow: $shadow-primary;
-  background-color: $primary;
-  padding: $gutter;
+  box-shadow: $shadow;
+  background-color: $white;
+  padding: 1.5rem;
   margin: 0 1rem;
   @include inline-flex;
   transition: $fade;
   & svg {
-    @include icon($icon-size: $icon-size-button, $icon-color: $white);
+    @include icon($icon-size: $icon-size-button);
   }
 
   &:last-of-type {
     margin-right: 0;
   }
   &:hover {
+    box-shadow: $shadow-hover;
+  }
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.nav__button__primary {
+  @extend .nav__button;
+  box-shadow: $shadow-primary;
+  background-color: $primary;
+  & svg {
+    @include icon($icon-size: $icon-size-button, $icon-color: $white);
+  }
+  &:hover {
     box-shadow: $shadow-primary-hover;
+  }
+  @media (max-width: $tablet) {
+    display: inline-flex;
   }
 }

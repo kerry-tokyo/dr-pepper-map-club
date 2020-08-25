@@ -17,7 +17,8 @@ export default () => (
     <Div100vh>
       <KerryMap />
       <NavButtonContainer>
-        <NavButton icon={<Add />} />
+        <NavButton icon={<Location />} />
+        <NavButton primary icon={<Add />} />
       </NavButtonContainer>
     </Div100vh>
   </BaseLayout>

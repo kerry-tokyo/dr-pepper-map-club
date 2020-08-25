@@ -1,0 +1,45 @@
+@import "~styles/config";
+
+.checkbox__container {
+  @include flex($justify-content: flex-start);
+  margin: $gutter 0;
+
+  & .checkbox__inner {
+    position: relative;
+    margin-right: $gutter;
+    @include inline-flex;
+  }
+
+  & .checkbox {
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+    vertical-align: top;
+    overflow: hidden;
+    border-radius: $circle;
+    cursor: pointer;
+    background: $horizontalRule;
+
+    &:checked {
+      background: $primary;
+    }
+
+    &:hover {
+    }
+  }
+
+  & .checkbox__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    @include inline-flex;
+
+    & svg {
+      @include icon($icon-color: $white, $icon-size: $icon-size-min);
+    }
+  }
+}

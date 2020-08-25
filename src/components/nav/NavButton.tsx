@@ -8,9 +8,10 @@ interface NavButtonProps {
   href?: string;
   onClick?(): void;
   icon?: ReactNode;
+  primary?: boolean;
 }
 
-export const NavButton = ({ href, onClick, icon }: NavButtonProps) => {
+export const NavButton = ({ href, onClick, icon, primary }: NavButtonProps) => {
   const isLink = typeof href !== "undefined";
   const isExternal =
     isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(href || "");
@@ -18,7 +19,7 @@ export const NavButton = ({ href, onClick, icon }: NavButtonProps) => {
   if (isExternal) {
     return (
       <a
-        className={s.nav__button}
+        className={primary ? s.nav__button__primary : s.nav__button}
         target="_blank"
         rel="noopener noreferrer"
         href={href}
@@ -30,14 +31,20 @@ export const NavButton = ({ href, onClick, icon }: NavButtonProps) => {
 
   if (isLink) {
     return (
-      <Link className={s.nav__button} to={href || "#"}>
+      <Link
+        className={primary ? s.nav__button__primary : s.nav__button}
+        to={href || "#"}
+      >
         {icon}
       </Link>
     );
   }
 
   return (
-    <button className={s.nav__button} onClick={onClick}>
+    <button
+      className={primary ? s.nav__button__primary : s.nav__button}
+      onClick={onClick}
+    >
       {icon}
     </button>
   );
