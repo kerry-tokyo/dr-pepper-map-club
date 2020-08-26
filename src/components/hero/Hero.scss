@@ -11,8 +11,8 @@
 .hero__user {
   text-align: center;
   & .icon {
-    width: calc(100px + (200 - 100) * ((100vw - 375px) / (1500 - 375)));
-    height: calc(100px + (200 - 100) * ((100vw - 375px) / (1500 - 375)));
+    width: calc(200px + (250 - 200) * ((100vw - 375px) / (1500 - 375)));
+    height: calc(200px + (250 - 200) * ((100vw - 375px) / (1500 - 375)));
     overflow: hidden;
     border-radius: $circle;
     border: $border;
@@ -22,6 +22,10 @@
     font-size: $font-size;
     color: $title;
     font-weight: 500;
-    margin: 1rem 0 $gutter * 2;
+    margin: 1rem 0;
+  }
+  & .button__container {
+    padding: $gutter 0;
+    margin-bottom: $gutter * 2;
   }
 }
