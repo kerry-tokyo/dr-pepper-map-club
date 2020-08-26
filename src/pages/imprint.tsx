@@ -19,7 +19,7 @@ export default () => (
           &nbsp;The repository&nbsp;
         </Link>
         is published on GitHub. If you have any questions about bugs or
-        features, please contact us from the
+        services, please contact us from the
         <Link to="/feedback">&nbsp;feedback page</Link>.
       </p>
     </Hero>
