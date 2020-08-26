@@ -22,14 +22,3 @@ export default () => {
     </BaseLayout>
   );
 };
-
-var user = firebase.auth().currentUser;
-
-user
-  .delete()
-  .then(function () {
-    // User deleted.
-  })
-  .catch(function (error) {
-    // An error happened.
-  });
