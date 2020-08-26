@@ -7,11 +7,24 @@ interface FormProps {
   name?: string;
   method?: string;
   netlify?: string;
+  action?: string;
 }
 
-export const Form = ({ children, name, method, netlify }: FormProps) => {
+export const Form = ({
+  children,
+  name,
+  method,
+  netlify,
+  action,
+}: FormProps) => {
   return (
-    <form className={s.form} name={name} method={method} data-netlify={netlify}>
+    <form
+      className={s.form}
+      name={name}
+      method={method}
+      data-netlify={netlify}
+      action={action}
+    >
       {children}
     </form>
   );
