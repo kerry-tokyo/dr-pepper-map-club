@@ -13,5 +13,10 @@ export const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth();
+let auth;
+
+if (typeof window !== "undefined") {
+  auth = firebase.auth();
+}
+
 export { auth, firebase };
