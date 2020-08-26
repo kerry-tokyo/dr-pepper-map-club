@@ -2,8 +2,8 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: `Kerry Gatsby Starter`,
-    description: `Use Kerry's Starter to start your next great Gatsby project.`,
+    title: `Dr Pepper Map Club`,
+    description: `A web app that checks vending machines equipped with Dr Pepper.`,
     author: `@kerry-tokyo`,
   },
   plugins: [
