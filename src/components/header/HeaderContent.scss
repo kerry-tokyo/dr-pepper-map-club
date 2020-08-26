@@ -3,14 +3,14 @@
 .link,
 .link__button {
   display: inline-flex;
-  margin-left: 3rem;
+  padding-left: 3rem;
   text-decoration: none;
   transition: 200ms opacity ease-in-out;
   text-transform: capitalize;
   font-weight: 500;
 
   &:first-child {
-    margin-left: 0;
+    padding-left: 0;
   }
 
   &__icon {
