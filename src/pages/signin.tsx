@@ -6,7 +6,7 @@ import { Hero } from "components/hero/Hero";
 import { CardForm } from "components/form/CardForm";
 import { SocialButton } from "components/button/SocialButton";
 
-import { auth, firebase } from "../firebase";
+import { firebase } from "../firebase";
 
 import Google from "../assets/svg/google.svg";
 import GitHub from "../assets/svg/github.svg";
@@ -15,48 +15,26 @@ class SignIn extends React.Component {
   //Google
   signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+
     firebase
       .auth()
       .signInWithRedirect(provider)
-
-      .then((res) => {
-        return firestore.collection("users").doc(res.user.uid).set({
-          created_at: firebase.firestore.FieldValue.serverTimestamp(),
-          name: res.user.displayName,
-          thumgnailMediumImageUrl: res.user.photoURL,
-          originalImageUrl: res.user.photoURL,
-          update_at: firebase.firestore.FieldValue.serverTimestamp(),
-        });
-      })
       .then(() => {
-        location.href = "/index";
-      })
-      .catch((error) => {
-        alert(error.message);
+        location.href = "/";
       });
   };
 
   //GitHub
   signInWithGithub = () => {
     const provider = new firebase.auth.GithubAuthProvider();
+    provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+
     firebase
       .auth()
       .signInWithRedirect(provider)
-
-      .then((res) => {
-        return firestore.collection("users").doc(res.user.uid).set({
-          created_at: firebase.firestore.FieldValue.serverTimestamp(),
-          name: res.user.displayName,
-          thumgnailMediumImageUrl: res.user.photoURL,
-          originalImageUrl: res.user.photoURL,
-          update_at: firebase.firestore.FieldValue.serverTimestamp(),
-        });
-      })
       .then(() => {
         location.href = "/";
-      })
-      .catch((error) => {
-        alert(error.message);
       });
   };
 

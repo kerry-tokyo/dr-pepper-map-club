@@ -20,7 +20,6 @@ import Like from "../../assets/svg/icons/like.svg";
 import Settings from "../../assets/svg/icons/settings.svg";
 import Other from "../../assets/svg/icons/other.svg";
 import Usage from "../../assets/svg/icons/usage.svg";
-import Help from "../../assets/svg/icons/help.svg";
 import Feedback from "../../assets/svg/icons/feedback.svg";
 import Privacy from "../../assets/svg/icons/privacy.svg";
 import Terms from "../../assets/svg/icons/terms.svg";
@@ -42,7 +41,12 @@ export default ({ children, text }: BaseLayoutProps) => {
   }, []);
 
   const handleLogout = () => {
-    firebase.auth().signOut();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        location.href = "/";
+      });
   };
 
   return (
@@ -78,9 +82,6 @@ export default ({ children, text }: BaseLayoutProps) => {
           <Dropdown button={<Other />}>
             <DropdownItem href="/usage" icon={<Usage />}>
               Usage
-            </DropdownItem>
-            <DropdownItem href="/help" icon={<Help />}>
-              Help
             </DropdownItem>
             <DropdownItem href="/feedback" icon={<Feedback />}>
               Feedback
