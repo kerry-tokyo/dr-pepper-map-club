@@ -13,6 +13,7 @@ import { MobileNav } from "../nav/MobileNav";
 import { Icon } from "../user/Icon";
 import { Dropdown } from "../dropdown/Dropdown";
 import { DropdownItem } from "../dropdown/DropdownItem";
+import { Button } from "../button/Button";
 
 import Location from "../../assets/svg/icons/current-location.svg";
 import User from "../../assets/svg/icons/user.svg";
@@ -109,7 +110,9 @@ export default ({ children, text }: BaseLayoutProps) => {
           ]}
         />
       ) : (
-        <MobileNav nav={[{ icon: <Location />, to: "/" }]} />
+        <MobileNav button>
+          <Button href="/signin">Sign In</Button>
+        </MobileNav>
       )}
       <div className={s(text ? s.text__layout : "")}>{children}</div>
     </div>

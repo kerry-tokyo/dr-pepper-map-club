@@ -18,6 +18,14 @@
     grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
     height: 100%;
   }
+  //button
+  &.mobile__nav__button {
+    height: auto;
+    & .inner {
+      padding: 1rem 0;
+    }
+  }
+
   //item
   & .item {
     @include inline-flex;

@@ -10,22 +10,34 @@ interface Nav {
 }
 
 interface MobileNavProps {
-  nav: Nav[];
+  nav?: Nav[];
+  button?: boolean;
+  children?: ReactNode;
 }
 
-export const MobileNav = ({ nav }: MobileNavProps) => (
-  <nav className={s.mobile__nav}>
-    <div className={s.inner}>
-      {nav.map((item) => (
-        <Link
-          key={item.to}
-          className={s.item}
-          activeClassName={s.active}
-          to={item.to}
-        >
-          <span className={s.icon}>{item.icon}</span>
-        </Link>
-      ))}
-    </div>
-  </nav>
-);
+export const MobileNav = ({ nav, button, children }: MobileNavProps) => {
+  const isButton = button;
+  if (isButton) {
+    return (
+      <nav className={s(s.mobile__nav, s.mobile__nav__button)}>
+        <div className={s.inner}>{children}</div>
+      </nav>
+    );
+  }
+  return (
+    <nav className={s.mobile__nav}>
+      <div className={s.inner}>
+        {nav.map((item) => (
+          <Link
+            key={item.to}
+            className={s.item}
+            activeClassName={s.active}
+            to={item.to}
+          >
+            <span className={s.icon}>{item.icon}</span>
+          </Link>
+        ))}
+      </div>
+    </nav>
+  );
+};
