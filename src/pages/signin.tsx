@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 
 import BaseLayout from "components/layout/BaseLayout";
@@ -9,7 +9,7 @@ import { SocialButton } from "components/button/SocialButton";
 import { auth, firebase } from "../firebase";
 
 import Google from "../assets/svg/google.svg";
-import GitHub from "../assets/svg/GitHub.svg";
+import GitHub from "../assets/svg/gitHub.svg";
 
 class SignIn extends React.Component {
   //Google
