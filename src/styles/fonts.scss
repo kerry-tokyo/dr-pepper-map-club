@@ -6,13 +6,13 @@ h4,
 h5,
 h6 {
   margin: 0 auto;
-  font-weight: 400;
+  font-weight: 300;
   font-family: $sans;
   color: $title;
   width: 100%;
   max-width: $desktop_large;
   letter-spacing: -0.01em;
-  font-feature-settings: "palt";
+  font-feature-settings: "kern";
 }
 
 h1,
@@ -28,7 +28,7 @@ h3 * {
 }
 
 h1 {
-  font-size: calc(32px + (52 - 32) * ((100vw - 375px) / (1500 - 375)));
+  font-size: calc(35px + (65 - 35) * ((100vw - 375px) / (1500 - 375)));
   line-height: 1.35;
 }
 

@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import BaseLayout from "components/layout/BaseLayout";
 import { Hero } from "components/hero/Hero";
 import { Block } from "components/block/Block";
+import { Form } from "components/form/Form";
 import { CheckBox } from "components/form/CheckBox";
 import { TextArea } from "components/form/TextArea";
 import { FormItem } from "components/form/FormItem";
@@ -20,20 +21,25 @@ export default () => (
       </p>
     </Hero>
     <Block>
-      <FormItem>
-        <CheckBox text="Service" />
-        <hr />
-        <CheckBox text="Function" />
-        <hr />
-        <CheckBox text="Bug" />
-        <hr />
-      </FormItem>
-      <FormItem>
-        <TextArea placeholder="Please provide specific feedback." />
-      </FormItem>
-      <FormItem>
-        <Button>Send</Button>
-      </FormItem>
+      <Form name="feedback" netlify="true" method="post">
+        <FormItem>
+          <CheckBox text="Service" name="Theme" />
+          <hr />
+          <CheckBox text="Function" name="Theme" />
+          <hr />
+          <CheckBox text="Bug" name="Theme" />
+          <hr />
+        </FormItem>
+        <FormItem>
+          <TextArea
+            name="Message"
+            placeholder="Please provide specific feedback."
+          />
+        </FormItem>
+        <FormItem>
+          <Button type="submit">Send</Button>
+        </FormItem>
+      </Form>
     </Block>
   </BaseLayout>
 );

@@ -10,7 +10,7 @@ export default () => (
   <BaseLayout text>
     <Helmet title="Imprint" />
     <Hero>
-      <h1>Dr Pepper Map Club</h1>
+      <h1>We Love Dr Pepper.</h1>
       <p>
         Dr Pepper Map Club was created by
         <Link to="https://kerrytokyo.com">&nbsp;Kerry</Link>, a designer living

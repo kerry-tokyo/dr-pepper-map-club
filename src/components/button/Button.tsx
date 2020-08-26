@@ -1,22 +1,29 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
-import { Link } from 'components/link/Link';
+import { Link } from "components/link/Link";
 
-import s from './Button.scss';
+import s from "./Button.scss";
 
 interface ButtonProps {
   children: ReactNode;
   href?: string;
   onClick?(): void;
+  type?: string;
 }
 
-export const Button = ({ children, href, onClick }: ButtonProps) => {
-  const isLink = typeof href !== 'undefined';
-  const isExternal = isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(href || '');
+export const Button = ({ children, href, onClick, type }: ButtonProps) => {
+  const isLink = typeof href !== "undefined";
+  const isExternal =
+    isLink && /^((https?:)?\/\/|[0-9a-zA-Z]+:)/.test(href || "");
 
   if (isExternal) {
     return (
-      <a className={s.button} target="_blank" rel="noopener noreferrer" href={href}>
+      <a
+        className={s.button}
+        target="_blank"
+        rel="noopener noreferrer"
+        href={href}
+      >
         {children}
       </a>
     );
@@ -24,14 +31,14 @@ export const Button = ({ children, href, onClick }: ButtonProps) => {
 
   if (isLink) {
     return (
-      <Link className={s.button} to={href || '#'}>
+      <Link className={s.button} to={href || "#"}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={s.button} onClick={onClick}>
+    <button className={s.button} onClick={onClick} type={type}>
       {children}
     </button>
   );

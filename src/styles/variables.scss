@@ -23,7 +23,25 @@ $page-limit: $page-width + ($container-gutter-desktop * 2);
 
 // Fonts
 $serif: serif;
-$sans: "FF Tisa Sans", sans-serif;
+$sans: "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", sans-serif;
 
 $font-size-l: calc(24px + (28 - 24) * ((100vw - 375px) / (1500 - 375)));
 $font-size: calc(16px + (18 - 16) * ((100vw - 375px) / (1500 - 375)));
