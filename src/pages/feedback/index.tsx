@@ -5,7 +5,6 @@ import BaseLayout from "components/layout/BaseLayout";
 import { Hero } from "components/hero/Hero";
 import { Block } from "components/block/Block";
 import { Form } from "components/form/Form";
-import { CheckBox } from "components/form/CheckBox";
 import { TextArea } from "components/form/TextArea";
 import { FormItem } from "components/form/FormItem";
 import { Button } from "components/button/Button";
@@ -28,14 +27,7 @@ export default () => {
           method="post"
           action="/feedback/send"
         >
-          <FormItem>
-            <CheckBox text="Service" name="Theme" />
-            <hr />
-            <CheckBox text="Function" name="Theme" />
-            <hr />
-            <CheckBox text="Bug" name="Theme" />
-            <hr />
-          </FormItem>
+          <FormItem></FormItem>
           <FormItem>
             <TextArea
               name="Message"
