@@ -2,7 +2,7 @@ import React from "react";
 
 import Check from "../../assets/svg/icons/check.svg";
 
-import s from "./Checkbox.scss";
+import s from "./CheckBox.scss";
 
 interface CheckBoxProps {
   text?: string;
