@@ -305,7 +305,7 @@
 }
 
 //Card
-@mixin card {
+@mixin card($border: $border) {
   overflow: hidden;
   border-radius: $rounded;
   border: $border;

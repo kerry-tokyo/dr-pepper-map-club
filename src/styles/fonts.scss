@@ -30,6 +30,7 @@ h3 * {
 h1 {
   font-size: calc(35px + (65 - 35) * ((100vw - 375px) / (1500 - 375)));
   line-height: 1.35;
+  color: $primary;
 }
 
 h2 {

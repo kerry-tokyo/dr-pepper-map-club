@@ -1,0 +1,30 @@
+@import "~styles/config";
+
+//form
+.card {
+  @include card($border: none);
+  box-shadow: $shadow;
+  max-width: $phablet;
+  margin: auto;
+  padding: $gutter;
+  transition: $fade;
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.2em;
+    line-height: 1;
+  }
+  p {
+    color: $grey;
+  }
+  & svg {
+    @include icon($icon-size: $icon-size-card);
+    margin-bottom: $gutter;
+  }
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+}

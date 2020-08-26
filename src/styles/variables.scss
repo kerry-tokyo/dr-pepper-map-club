@@ -98,6 +98,7 @@ $logo-size: calc(20px + (25 - 20) * ((100vw - 375px) / (1500 - 375)));
 
 //Icons
 $icon-size-max: 5rem;
+$icon-size-card: calc(25px + (30 - 25) * ((100vw - 375px) / (1500 - 375)));
 $icon-size: 1.6rem;
 $icon-size-min: 1.3rem;
 $icon-size-button: calc(20px + (22 - 20) * ((100vw - 375px) / (1500 - 375)));
@@ -121,7 +122,7 @@ $primary-grey: rgba(16, 20, 26, 0.05);
 //Colors Typography
 $title: #000044;
 $paragraph: #7a7a88;
-$grey: rgba(18, 18, 18, 0.5);
+$grey: rgba(18, 18, 18, 0.4);
 $placeholder: #ddd;
 
 $dark-title: #fcfcfc;
