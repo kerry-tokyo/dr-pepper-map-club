@@ -62,5 +62,7 @@ firebase login
 ```shell
 npm install
 
+gatsby build
+
 gatsby develop
 ```
