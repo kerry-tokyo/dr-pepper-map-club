@@ -9,7 +9,7 @@ import { SocialButton } from "components/button/SocialButton";
 import { auth, firebase } from "../firebase";
 
 import Google from "../assets/svg/google.svg";
-import GitHub from "../assets/svg/gitHub.svg";
+import GitHub from "../assets/svg/github.svg";
 
 class SignIn extends React.Component {
   //Google
