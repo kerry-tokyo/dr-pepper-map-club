@@ -9,11 +9,18 @@
     @include inline-flex;
     &:after {
       content: ">";
-      margin: 0 1rem;
+      margin-left: 2rem;
       color: $paragraph;
     }
     & a {
       @include hover-line;
+    }
+  }
+  & .breadcrumb__current,
+  .breadcrumb__link {
+    padding: 1rem;
+    &:first-of-type {
+      padding-left: 0;
     }
   }
 }
