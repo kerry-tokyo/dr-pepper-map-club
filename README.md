@@ -28,9 +28,6 @@ GATSBY_FIREBASE_MESSAGING_SENDER_ID=******
 GATSBY_FIREBASE_APP_ID=******
 # Google Map
 GATSBY_GOOGLE_API_KEY=******
-
-
-
 ```
 
 ### 2. 2. Install the Firebase modules
