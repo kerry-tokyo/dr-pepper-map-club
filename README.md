@@ -57,7 +57,9 @@ npm install -g firebase-tools
 firebase login
 ```
 
-### 3. Develop & Build
+### 3. Google Map API
+
+### 4. Develop & Build
 
 ```shell
 npm install

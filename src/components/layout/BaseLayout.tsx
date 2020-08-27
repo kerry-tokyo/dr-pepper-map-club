@@ -7,7 +7,6 @@ import { helmet } from "../../utils/helmet";
 import { Header } from "components/header/Header";
 import { HeaderContent } from "components/header/HeaderContent";
 import { HeaderItem } from "components/header/HeaderItem";
-import { MobileNav } from "components/nav/MobileNav";
 import { Icon } from "components/user/Icon";
 import { Dropdown } from "components/dropdown/Dropdown";
 import { DropdownItem } from "components/dropdown/DropdownItem";
@@ -99,20 +98,6 @@ export default ({ children, text }: BaseLayoutProps) => {
           </Dropdown>
         </HeaderItem>
       </Header>
-      {user ? (
-        <MobileNav
-          nav={[
-            { icon: <Location />, to: "/location" },
-            { icon: <Like />, to: "/like" },
-            { icon: <User />, to: "/mypage" },
-            { icon: <Settings />, to: "/settings" },
-          ]}
-        />
-      ) : (
-        <MobileNav button>
-          <Button href="/signin">Sign In</Button>
-        </MobileNav>
-      )}
       <div className={s(text ? s.text__layout : "")}>{children}</div>
     </div>
   );

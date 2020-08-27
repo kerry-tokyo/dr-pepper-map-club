@@ -55,7 +55,7 @@
   right: $container-gutter;
   bottom: $container-gutter;
   @media (max-width: $tablet) {
-    bottom: calc(#{$height-nav} + #{$gutter});
+    bottom: $gutter * 2;
   }
 
   & .nav__button {
@@ -63,9 +63,6 @@
 
     &:last-of-type {
       margin-right: 0;
-    }
-    @media (max-width: $tablet) {
-      display: none;
     }
   }
 }
