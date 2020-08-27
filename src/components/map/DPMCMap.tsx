@@ -216,7 +216,7 @@ const DPMCMap = (props: any) => {
   return (
     <Div100vh className={s.map}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyAsBxoU3GsWmMqAMOuPA61QNS9JPkZdN38" }}
+        bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
         defaultCenter={center}
         defaultZoom={zoom}
         options={createMapOptions}
