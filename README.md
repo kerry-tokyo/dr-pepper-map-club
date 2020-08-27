@@ -4,6 +4,14 @@
 
 A web app that checks vending machines equipped with Dr Pepper.
 
+## Purpose
+
+Through this web app, you can learn to build a simple service using Firebase, React and TypeScript.
+
+## License
+
+The license for this repository is BSD-3-Clause. You are free to use it, but you may not use it to guarantee or promote products derived from this software. In addition, since the copyright of the logo belongs to the author, any acts such as falsification are prohibited.
+
 ## Start
 
 ### 1. Firebase & Google Map API
