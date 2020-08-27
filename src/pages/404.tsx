@@ -2,13 +2,16 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import BaseLayout from "components/layout/BaseLayout";
 
-import { BlockText } from "components/block-text/BlockText";
+import { Hero } from "components/hero/Hero";
 
 // tslint:disable no-default-export
 export default () => (
   <BaseLayout>
     <Helmet title="404" />
 
-    <BlockText heading="404" description="This is 404 page." />
+    <Hero>
+      <h1>404</h1>
+      <p>Sorry, the page you were looking for doesn't seem to exist anymore.</p>
+    </Hero>
   </BaseLayout>
 );
