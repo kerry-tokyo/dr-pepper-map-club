@@ -33,7 +33,7 @@ GATSBY_GOOGLE_API_KEY=******
 
 ```
 
-### 2. Firebase Module Install
+### 2. 2. Install the Firebase modules
 
 ```shell
 npm install firebase-functions@latest firebase-admin@latest --save
