@@ -8,43 +8,25 @@ A web app that checks vending machines equipped with Dr Pepper.
 
 ### 1. Create Firebase folder
 
-Create a firebase folder under `src` and add `index.ts`.
-
 ```
-  /
-  └── src
-    └── firebase
-        └── index.ts
+  dr-pepper-map-club
+  └── .env
 ```
 
-Then enter the API key as shown below.
+After creating the .env file, enter the API key as shown below.
 
-`src/firebase/index.ts`
+`.env`
 
-```tsx
-import firebase from "firebase/app";
-import "firebase/auth";
+```env
+GATSBY_FIREBASE_API_KEY=AIzaSyDXHcJtXvy08mlIWjCoj0w5lyBom-nuUiI
+GATSBY_FIREBASE_AUTH_DOMAIN=dr-pepper-map-club.firebaseapp.com
+GATSBY_FIREBASE_DATABASE_URL=https://dr-pepper-map-club.firebaseio.com
+GATSBY_FIREBASE_PROJECT_ID=dr-pepper-map-club
+GATSBY_FIREBASE_STORAGE_BUCKET=dr-pepper-map-club.appspot.com
+GATSBY_FIREBASE_MESSAGING_SENDER_ID=636506083949
+GATSBY_FIREBASE_APP_ID=1:636506083949:web:b75f877d47627746be6564
 
-export const firebaseConfig = {
-  apiKey: "********",
-  authDomain: "********",
-  databaseURL: "********",
-  projectId: "********",
-  storageBucket: "********",
-  messagingSenderId: "********",
-  appId: "********",
-  measurementId: "********",
-};
 
-firebase.initializeApp(firebaseConfig);
-
-let auth;
-
-if (typeof window !== "undefined") {
-  auth = firebase.auth();
-}
-
-export { auth, firebase };
 ```
 
 ### 2. Firebase Setup
