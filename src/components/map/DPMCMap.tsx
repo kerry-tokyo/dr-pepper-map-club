@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
-import Marker from "./Marker";
+import CurrentMarker from "./CurrentMarker";
 import Div100vh from "react-div-100vh";
 
 import s from "./Map.scss";
 
-const KerryMap = (props: any) => {
+const DPMCMap = (props: any) => {
   const [center, setCenter] = useState({ lat: 35.6556788, lng: 139.7104743 });
-  const [zoom, setZoom] = useState(15);
+  const [zoom, setZoom] = useState(12);
 
   const createMapOptions = (maps: Maps): MapOptions => {
     return {
@@ -221,10 +221,10 @@ const KerryMap = (props: any) => {
         defaultZoom={zoom}
         options={createMapOptions}
       >
-        <Marker lat={35.6556788} lng={139.7104743} />
+        <CurrentMarker lat={35.6556788} lng={139.7104743} />
       </GoogleMapReact>
     </Div100vh>
   );
 };
 
-export default KerryMap;
+export default DPMCMap;

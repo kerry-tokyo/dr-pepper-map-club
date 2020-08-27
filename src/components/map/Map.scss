@@ -13,3 +13,33 @@
   &:hover {
   }
 }
+
+.marker {
+  & .pin__container {
+    width: 10rem;
+    height: 10rem;
+    @include inline-flex;
+  }
+
+  & .pin {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: $primary;
+    border: 2px solid $white;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: $shadow;
+  }
+
+  & .pin__effect {
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 0;
+    display: block;
+    background: rgba(255, 0, 97, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+    animation: pulsate 2400ms ease-out infinite;
+  }
+}

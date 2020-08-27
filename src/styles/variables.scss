@@ -130,14 +130,6 @@ $dark-paragraph: #efefef;
 $dark-grey: rgba(252, 252, 252, 0.3);
 $dark-placeholder: #6f6f6f;
 
-//Animations
-$fade: all 0.3s;
-$fade-up: all 0.1s cubic-bezier(0.63, 0.03, 0.17, 0.95);
-$line: 0.6s cubic-bezier(1, 0, 0, 1);
-$scroll: all 0.9s cubic-bezier(0.63, 0.03, 0.17, 0.95);
-$show: max-height 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
-$dropdown: all 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
-
 //objects
 $circle: 20rem;
 $rounded: 0.6rem;
@@ -151,3 +143,25 @@ $border: 1px solid $horizontalRule;
 
 //height
 $height-nav: 5rem;
+
+//Animations
+$fade: all 0.3s;
+$fade-up: all 0.1s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+$line: 0.6s cubic-bezier(1, 0, 0, 1);
+$scroll: all 0.9s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+$show: max-height 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+$dropdown: all 0.3s cubic-bezier(0.63, 0.03, 0.17, 0.95);
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}

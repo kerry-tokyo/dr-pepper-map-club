@@ -3,18 +3,17 @@ import { Helmet } from "react-helmet";
 
 import { auth, firebase } from "../../firebase";
 
-import Logo from "../../assets/svg/logo.svg";
-
 import { helmet } from "../../utils/helmet";
-import { Header } from "../header/Header";
-import { HeaderContent } from "../header/HeaderContent";
-import { HeaderItem } from "../header/HeaderItem";
-import { MobileNav } from "../nav/MobileNav";
-import { Icon } from "../user/Icon";
-import { Dropdown } from "../dropdown/Dropdown";
-import { DropdownItem } from "../dropdown/DropdownItem";
-import { Button } from "../button/Button";
+import { Header } from "components/header/Header";
+import { HeaderContent } from "components/header/HeaderContent";
+import { HeaderItem } from "components/header/HeaderItem";
+import { MobileNav } from "components/nav/MobileNav";
+import { Icon } from "components/user/Icon";
+import { Dropdown } from "components/dropdown/Dropdown";
+import { DropdownItem } from "components/dropdown/DropdownItem";
+import { Button } from "components/button/Button";
 
+import Logo from "../../assets/svg/logo.svg";
 import Location from "../../assets/svg/icons/current-location.svg";
 import User from "../../assets/svg/icons/user.svg";
 import Like from "../../assets/svg/icons/like.svg";
