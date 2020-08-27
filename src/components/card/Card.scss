@@ -4,7 +4,9 @@
 .card {
   @include card($border: none);
   box-shadow: $shadow;
+  width: 100%;
   max-width: $phablet;
+  min-height: 20rem;
   margin: auto;
   padding: $gutter;
   transition: $fade;

@@ -1,5 +1,7 @@
 {
   "files.exclude": {
     "**/.git": false
-  }
+  },
+  "editor.quickSuggestionsDelay": 1,
+  "editor.suggestOnTriggerCharacters": false
 }

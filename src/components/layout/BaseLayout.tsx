@@ -1,7 +1,7 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet";
 
-import { auth, firebase } from "../../firebase";
+import { firebase } from "../../firebase";
 
 import { helmet } from "../../utils/helmet";
 import { Header } from "components/header/Header";
@@ -10,10 +10,8 @@ import { HeaderItem } from "components/header/HeaderItem";
 import { Icon } from "components/user/Icon";
 import { Dropdown } from "components/dropdown/Dropdown";
 import { DropdownItem } from "components/dropdown/DropdownItem";
-import { Button } from "components/button/Button";
 
 import Logo from "../../assets/svg/logo.svg";
-import Location from "../../assets/svg/icons/current-location.svg";
 import User from "../../assets/svg/icons/user.svg";
 import Like from "../../assets/svg/icons/like.svg";
 import Settings from "../../assets/svg/icons/settings.svg";
@@ -31,13 +29,7 @@ interface BaseLayoutProps {
 }
 
 export default ({ children, text }: BaseLayoutProps) => {
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    return firebase.auth().onAuthStateChanged((user) => {
-      setUser(user);
-    });
-  }, []);
+  const user = firebase.auth().currentUser;
 
   const handleLogout = () => {
     firebase

@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
 
-import { Link } from "components/link/Link";
-
 import s from "./Breadcrumb.scss";
 
 interface CurrentItemProps {

@@ -5,13 +5,48 @@
   margin-bottom: $gutter * 2;
 }
 
+//input
+.input__container {
+  position: relative;
+  max-width: 40rem;
+  & .input {
+    @include input;
+  }
+}
+
 //label
 .label {
   margin-bottom: 1rem;
-  font-weight: 500;
+  font-size: $font-size-s;
+  color: $primary;
 }
 
 //textarea
 .textarea {
   @include input($height: $gutter * 6);
+}
+
+//upload icon
+.upload__icon {
+  width: calc(150px + (150 - 100) * ((100vw - 375px) / (1500 - 375)));
+  text-align: center;
+  & .upload__img {
+    cursor: pointer;
+    width: calc(150px + (150 - 100) * ((100vw - 375px) / (1500 - 375)));
+    height: calc(150px + (150 - 100) * ((100vw - 375px) / (1500 - 375)));
+    overflow: hidden;
+    border-radius: 50%;
+    border: $border;
+    transition: $fade;
+    &:hover {
+      border-color: $primary;
+    }
+  }
+  & .upload__helper__text {
+    cursor: pointer;
+    font-size: $font-size-s;
+    margin-top: 1rem;
+    @include line-hover;
+    display: inline-block;
+  }
 }
