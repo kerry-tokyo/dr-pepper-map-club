@@ -1,8 +1,7 @@
 @import "~styles/config";
 
 #header {
-  position: fixed;
-  top: 0;
+  position: relative;
   width: 100%;
   z-index: 9900;
   padding: 2rem $container-gutter;

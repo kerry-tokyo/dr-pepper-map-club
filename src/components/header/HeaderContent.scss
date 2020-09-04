@@ -4,7 +4,7 @@
 .link__button,
 .container {
   @include inline-flex;
-  padding-left: $gutter * 2;
+  padding-left: calc(20px + (40 - 20) * ((100vw - 375px) / (1500 - 375)));
   cursor: pointer;
   &:first-child {
     padding-left: 0;

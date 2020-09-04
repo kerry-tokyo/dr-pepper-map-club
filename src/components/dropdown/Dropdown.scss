@@ -21,7 +21,7 @@
     transform: scale(1);
     opacity: 1;
     background: $background-color;
-    z-index: 9000;
+    z-index: 9900;
     &.hide {
       opacity: 0;
       visibility: hidden;

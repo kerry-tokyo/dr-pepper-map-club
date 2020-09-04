@@ -54,10 +54,6 @@
   position: fixed;
   right: $container-gutter;
   bottom: $container-gutter;
-  @media (max-width: $tablet) {
-    bottom: $gutter * 2;
-  }
-
   & .nav__button {
     margin: 0 1rem;
 
