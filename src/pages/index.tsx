@@ -8,6 +8,7 @@ import { NavButtonContainer } from "components/nav/NavButtonContainer";
 import { NavButton } from "components/nav/NavButton";
 import CurrentMarker from "components/map/CurrentMarker";
 import { Marker } from "components/map/Marker";
+import { MapSearch } from "components/search/MapSearch";
 
 import Add from "../assets/svg/icons/add.svg";
 import Location from "../assets/svg/icons/current-location.svg";
@@ -236,6 +237,7 @@ export default () => {
     <BaseLayout>
       <Helmet title="Home" />
       <Div100vh>
+        <MapSearch />
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
           defaultCenter={{

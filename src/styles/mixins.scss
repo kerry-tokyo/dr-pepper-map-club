@@ -305,9 +305,9 @@
 }
 
 //Card
-@mixin card($border: $border) {
+@mixin card($border: $border, $border-radius: $rounded) {
   overflow: hidden;
-  border-radius: $rounded;
+  border-radius: $border-radius;
   border: $border;
 }
 
@@ -324,4 +324,14 @@
   &:focus {
     border-color: $primary;
   }
+}
+
+//search
+@mixin search($padding: $gutter, $height: $gutter * 2) {
+  width: 100%;
+  height: $height;
+  transition: $fade;
+  padding: $padding 0;
+  font-size: $font-size;
+  font-weight: 400;
 }
