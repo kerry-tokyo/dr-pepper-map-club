@@ -1,16 +1,19 @@
 @import "~styles/config";
 
 .link,
-.link__button {
-  display: inline-flex;
-  padding-left: 1.5rem;
-  text-decoration: none;
-  transition: 200ms opacity ease-in-out;
-  text-transform: capitalize;
-  font-weight: 500;
-
+.link__button,
+.container {
+  @include inline-flex;
+  padding-left: $gutter * 2;
+  cursor: pointer;
   &:first-child {
     padding-left: 0;
+  }
+  &:hover * {
+    fill: $primary;
+  }
+  & * {
+    transition: $fade;
   }
 
   &__icon {

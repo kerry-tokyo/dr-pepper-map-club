@@ -6,7 +6,7 @@ interface InputProps {
   placeholder?: string;
   value?: string;
   defaultValue?: string;
-  onChange?(): void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   name?: string;
   type?: string;
   onClick?(): void;
@@ -36,7 +36,12 @@ export const Input = ({
           style={{ display: "none" }}
           type="file"
         />
-        <img className={s.upload__img} src={src} alt="profile icon" />
+        <img
+          className={s.upload__img}
+          src={src}
+          alt="profile icon"
+          onClick={onClick}
+        />
         <p className={s.upload__helper__text} onClick={onClick}>
           Change profile image
         </p>

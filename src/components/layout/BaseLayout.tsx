@@ -6,7 +6,7 @@ import { firebase } from "../../firebase";
 import { helmet } from "../../utils/helmet";
 import { Header } from "components/header/Header";
 import { HeaderContent } from "components/header/HeaderContent";
-import { HeaderItem } from "components/header/HeaderItem";
+import {} from "components/header/HeaderContent";
 import { Icon } from "components/user/Icon";
 import { Dropdown } from "components/dropdown/Dropdown";
 import { DropdownItem } from "components/dropdown/DropdownItem";
@@ -47,7 +47,7 @@ export default ({ children, text }: BaseLayoutProps) => {
       <Header logo={<Logo />}>
         {user ? (
           <>
-            <HeaderItem>
+            <HeaderContent container>
               <Dropdown button={<Icon icon={user && user.photoURL} />}>
                 <DropdownItem href="/mypage" icon={<User />}>
                   My Page
@@ -61,7 +61,7 @@ export default ({ children, text }: BaseLayoutProps) => {
                 <hr />
                 <DropdownItem onClick={handleLogout}>Sign Out</DropdownItem>
               </Dropdown>
-            </HeaderItem>
+            </HeaderContent>
           </>
         ) : (
           <>
@@ -69,7 +69,7 @@ export default ({ children, text }: BaseLayoutProps) => {
             <HeaderContent desktop to="/signin" button name="Sign In" />
           </>
         )}
-        <HeaderItem>
+        <HeaderContent container>
           <Dropdown button={<Other />}>
             <DropdownItem href="/usage" icon={<Usage />}>
               Usage
@@ -88,7 +88,7 @@ export default ({ children, text }: BaseLayoutProps) => {
               Terms of Service
             </DropdownItem>
           </Dropdown>
-        </HeaderItem>
+        </HeaderContent>
       </Header>
       <div className={s(text ? s.text__layout : "")}>{children}</div>
     </div>

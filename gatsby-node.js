@@ -42,7 +42,6 @@ exports.onCreateWebpackConfig = (
     },
     resolve: {
       modules: ["src", "node_modules"],
-      mainFields: ["main", "module"],
     },
   });
 };

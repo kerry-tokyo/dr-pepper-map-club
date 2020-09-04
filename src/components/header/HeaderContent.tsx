@@ -6,12 +6,14 @@ import { Button } from "components/button/Button";
 import s from "./HeaderContent.scss";
 
 interface HeaderContentProps {
-  name: string;
-  to: string;
+  name?: string;
+  to?: string;
   icon?: ReactNode;
   button?: boolean;
   desktop?: boolean;
   mobile?: boolean;
+  container?: boolean;
+  children?: ReactNode;
 }
 
 export const HeaderContent = ({
@@ -21,8 +23,11 @@ export const HeaderContent = ({
   button,
   desktop,
   mobile,
+  container,
+  children,
 }: HeaderContentProps) => {
   const isButton = button;
+  const isConainer = container;
 
   const content = () => (
     <>
@@ -30,6 +35,20 @@ export const HeaderContent = ({
       {name}
     </>
   );
+
+  if (isConainer) {
+    return (
+      <div
+        className={s(
+          s.container,
+          desktop ? s.desktop__content : "",
+          mobile ? s.mobile__content : ""
+        )}
+      >
+        {children}
+      </div>
+    );
+  }
 
   if (isButton) {
     return (

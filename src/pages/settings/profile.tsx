@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Helmet } from "react-helmet";
 
 import { firebase } from "../../firebase";
+import { storage } from "../../lib/firebase";
 
 import BaseLayout from "components/layout/BaseLayout";
 import { Hero } from "components/hero/Hero";
@@ -17,6 +18,12 @@ import { CurrentItem } from "components/breadcrumb/CurrentItem";
 
 export default () => {
   const [user, setUser] = useState<User | null>(null);
+  const [image, setImage] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const handleImage = (event) => {
+    const image = event.target.files[0];
+    setImage(image);
+  };
 
   useEffect(() => {
     return firebase.auth().onAuthStateChanged((user) => {
@@ -24,18 +31,51 @@ export default () => {
     });
   }, []);
 
-  const update = (name: string) => {
-    const currentUser = firebase.auth().currentUser;
-    currentUser
-      ?.updateProfile({
-        displayName: name,
-      })
-      .then(() => {
-        setUser(null);
-        setUser(firebase.auth().currentUser);
-      })
-      .catch((error) => {
-        console.log(`updateProfile() error : ${error.code}, ${error.message}`);
+  const inputRef = useRef(null);
+
+  const onClick = useCallback(() => {
+    if (inputRef.current) {
+      inputRef.current.click();
+    }
+  }, [inputRef]);
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if (image === "") {
+      console.log("ファイルが選択されていません");
+    }
+
+    // アップロード処理
+    const uploadTask = storage.ref(`/images/${image.name}`).put(image);
+    uploadTask.on(
+      firebase.storage.TaskEvent.STATE_CHANGED,
+      next,
+      error,
+      complete
+    );
+  };
+
+  const next = (snapshot: any) => {
+    // 進行中のsnapshotを得る
+    // アップロードの進行度を表示
+    const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log(percent + "% done");
+    console.log(snapshot);
+  };
+  const error = (error: any) => {
+    // エラーハンドリング
+    console.log(error);
+  };
+
+  const complete = () => {
+    // 完了後の処理
+    // 画像表示のため、アップロードした画像のURLを取得
+    storage
+      .ref("images")
+      .child(image.name)
+      .getDownloadURL()
+      .then((fireBaseUrl: any) => {
+        setImageUrl(fireBaseUrl);
       });
   };
 
@@ -52,14 +92,19 @@ export default () => {
         <p>You can change the user name and icon.</p>
       </Hero>
       <Block>
-        <Form>
+        <Form onSubmit={onSubmit}>
           <FormItem>
             <Label>Your Name</Label>
             <Input placeholder={user && user.displayName} />
           </FormItem>
           <FormItem>
             <Label>Your Icon</Label>
-            <Input src={user && user.photoURL} />
+            <Input
+              ref={inputRef}
+              src={user && user.photoURL}
+              onChange={handleImage}
+              onClick={onClick}
+            />
           </FormItem>
           <FormItem>
             <Button>Save</Button>

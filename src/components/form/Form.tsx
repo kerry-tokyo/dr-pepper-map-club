@@ -8,6 +8,7 @@ interface FormProps {
   method?: string;
   netlify?: string;
   action?: string;
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export const Form = ({
@@ -16,6 +17,7 @@ export const Form = ({
   method,
   netlify,
   action,
+  onSubmit,
 }: FormProps) => {
   return (
     <form
@@ -24,6 +26,7 @@ export const Form = ({
       method={method}
       data-netlify={netlify}
       action={action}
+      onSubmit={onSubmit}
     >
       {children}
     </form>

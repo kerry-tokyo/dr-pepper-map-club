@@ -9,14 +9,24 @@ $marker-size: 10rem;
 }
 
 .marker {
-  height: $marker-size;
-  width: $marker-size;
+  width: 2rem;
+  height: auto;
+  position: absolute;
+  top: -5rem;
+  left: -1rem;
   cursor: pointer;
-  &:hover {
+  & .icon {
+    width: auto;
+    height: 5rem;
   }
 }
 
-.marker {
+.current__marker {
+  height: $marker-size;
+  width: $marker-size;
+  position: absolute;
+  left: -$marker-size/2;
+  top: -$marker-size;
   & .pin__container {
     width: $marker-size;
     height: $marker-size;
