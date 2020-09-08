@@ -1,4 +1,4 @@
-![Logo](src/assets/images/ui.png)
+![Logo](src/assets/images/app-ui.png)
 
 ## Dr Pepper Map Club (To Be Developed)
 
