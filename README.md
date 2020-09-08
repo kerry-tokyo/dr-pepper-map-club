@@ -1,4 +1,4 @@
-![Logo](src/assets/images/logo.svg)
+![Logo](src/assets/images/ui.png)
 
 ## Dr Pepper Map Club (To Be Developed)
 
