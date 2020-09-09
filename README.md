@@ -1,6 +1,6 @@
 ![Logo](src/assets/images/app-ui.png)
 
-## Dr Pepper Map Club (To Be Developed)
+## Dr Pepper Map Club (under development)
 
 A web app that checks vending machines equipped with Dr Pepper.
 
