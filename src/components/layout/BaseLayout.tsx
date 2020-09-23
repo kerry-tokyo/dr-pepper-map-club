@@ -13,7 +13,6 @@ import { DropdownItem } from "components/dropdown/DropdownItem";
 
 import Logo from "../../assets/svg/logo.svg";
 import User from "../../assets/svg/icons/user.svg";
-import Like from "../../assets/svg/icons/like.svg";
 import Settings from "../../assets/svg/icons/settings.svg";
 import Other from "../../assets/svg/icons/other.svg";
 import Usage from "../../assets/svg/icons/usage.svg";
@@ -52,9 +51,6 @@ export default ({ children, text }: BaseLayoutProps) => {
                 <DropdownItem href="/mypage" icon={<User />}>
                   My Page
                 </DropdownItem>
-                <DropdownItem href="/like" icon={<Like />}>
-                  Like
-                </DropdownItem>
                 <DropdownItem href="/settings" icon={<Settings />}>
                   Settings
                 </DropdownItem>
@@ -66,7 +62,7 @@ export default ({ children, text }: BaseLayoutProps) => {
         ) : (
           <>
             <HeaderContent desktop to="/usage" name="Usage" />
-            <HeaderContent desktop to="/signin" button name="Sign In" />
+            <HeaderContent to="/signin" button name="Sign In" />
           </>
         )}
         <HeaderContent container>

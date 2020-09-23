@@ -2,9 +2,7 @@
 
 $marker-size: 10rem;
 
-.map {
-  width: 100%;
-  height: 500px;
+.map__container {
   background: $horizontalRule;
 }
 
@@ -14,10 +12,86 @@ $marker-size: 10rem;
   position: absolute;
   top: -3rem;
   left: -1rem;
-  cursor: pointer;
+
   & .icon {
     width: auto;
     height: 3rem;
+    cursor: pointer;
+  }
+  & .title {
+    color: $primary;
+    font-size: $font-size-s;
+  }
+  & .text {
+  }
+  //dropdown
+
+  & .dropdown__inner {
+    position: absolute;
+    right: 0;
+    min-width: 20rem;
+    @include card;
+    transition: $dropdown;
+    transform-origin: 100% 0%;
+    margin-top: 1rem;
+    padding: $gutter;
+    transform: scale(1);
+    opacity: 1;
+    background: $background-color;
+    z-index: 9900;
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+      margin: 0;
+      transform: scale(0);
+    }
+    //item
+    & .dropdown__item {
+      font-size: $font-size-s;
+      font-weight: 400;
+      padding: 1rem 1.5rem;
+      color: $grey;
+      width: 100%;
+      text-align: left;
+      @include inline-flex($justify-content: space-between);
+      transition: $fade;
+      &:hover {
+        color: $primary;
+        & .icon svg * {
+          fill: $primary;
+        }
+      }
+      //icon
+      & .icon {
+        & svg {
+          @include icon($icon-color: $grey);
+        }
+      }
+    }
+    //hr
+    & hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: $border;
+      width: 100%;
+    }
+  }
+  //bg
+  & .dropdown__bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 8000;
+    transform: translate(0, -6rem);
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    cursor: auto;
+    background-color: transparent;
+    &.hide {
+      display: none;
+    }
   }
 }
 

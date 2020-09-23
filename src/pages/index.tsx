@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import Div100vh from "react-div-100vh";
 import GoogleMapReact from "google-map-react";
 
 import BaseLayout from "components/layout/BaseLayout";
 import { NavButtonContainer } from "components/nav/NavButtonContainer";
 import { NavButton } from "components/nav/NavButton";
+import MapContainer from "components/map/MapContainer";
 import CurrentMarker from "components/map/CurrentMarker";
 import { Marker } from "components/map/Marker";
 import { MapSearch } from "components/search/MapSearch";
@@ -13,9 +13,9 @@ import { MapSearch } from "components/search/MapSearch";
 import Add from "../assets/svg/icons/add.svg";
 import Location from "../assets/svg/icons/current-location.svg";
 
-// tslint:disable no-default-export
 export default () => {
   const [zoom, setZoom] = useState(14);
+  const draggable = true;
 
   const createMapOptions = (maps: Maps): MapOptions => {
     return {
@@ -48,7 +48,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#7a7a88",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -82,7 +82,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#7a7a88",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -100,7 +100,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#9e9e9e",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -118,7 +118,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#7a7a88",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -137,7 +137,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#7a7a88",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -200,7 +200,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#7a7a88",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -218,7 +218,7 @@ export default () => {
           elementType: "labels.text.fill",
           stylers: [
             {
-              color: "#7a7a88",
+              color: "#c8c8c8",
             },
           ],
         },
@@ -236,7 +236,7 @@ export default () => {
   return (
     <BaseLayout>
       <Helmet title="Home" />
-      <Div100vh>
+      <MapContainer>
         <MapSearch />
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
@@ -245,10 +245,13 @@ export default () => {
             lng: 139.6994418,
           }}
           defaultZoom={zoom}
+          draggable={draggable}
           options={createMapOptions}
         >
           <CurrentMarker lat={35.6580382} lng={139.6994418} />
-          <Marker lat={35.6702328} lng={139.7005036} />
+          <Marker lat={35.6702328} lng={139.7005036}>
+            〒153-0042 東京都目黒区青葉台２丁目１０−２８
+          </Marker>
           <Marker lat={35.6627294} lng={139.7290225} />
           <Marker lat={35.6652554} lng={139.7098981} />
         </GoogleMapReact>
@@ -256,7 +259,7 @@ export default () => {
           <NavButton icon={<Location />} />
           <NavButton primary icon={<Add />} />
         </NavButtonContainer>
-      </Div100vh>
+      </MapContainer>
     </BaseLayout>
   );
 };
